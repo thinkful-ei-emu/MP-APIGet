@@ -47,9 +47,8 @@ function displayBreedImage(responseJson){
 function getBreedImage(breed){
   fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(response =>{
-
       if (response.ok){
-        return response.Json;
+        return response.json();
       }
       else{
         throw new Error('Likely not a breed name.');
