@@ -1,7 +1,7 @@
 'use strict';
 
-function getDogImage() {
-  fetch('https://dog.ceo/api/breeds/image/random')
+function getDogImage(number) {
+  fetch('https://dog.ceo/api/breeds/image/random/')
     .then(response => response.json())
     .then(responseJson => 
       displayResults(responseJson))
@@ -21,7 +21,9 @@ function displayResults(responseJson) {
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
-    getDogImage();
+    let number = $('.input-class').val();
+    console.log(number);
+    getDogImage(number);
   });
 }
 
